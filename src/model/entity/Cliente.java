@@ -8,9 +8,9 @@ public class Cliente {
     private String endereco;
 
     public Cliente(String nome, String endereco) {
-        this.id = idContador++;
         setNome(nome);
         setEndereco(endereco);
+        this.id = idContador++;
     }
 
     // |------------| Getter - Setter |------------|
