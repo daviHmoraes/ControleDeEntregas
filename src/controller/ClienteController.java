@@ -14,15 +14,29 @@ public class ClienteController {
     }
 
     public void salvar(Cliente cliente) {
-        clienteService.salvar(cliente);
+        try {
+            clienteService.salvar(cliente);
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public Cliente buscarPorId(int id) {
-        return clienteService.buscarPorId(id);
+        try {
+            return clienteService.buscarPorId(id);
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
     }
 
     public List<Cliente> listarTodos() {
-        return clienteService.listarTodos();
+        try {
+            return clienteService.listarTodos();
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
     }
 
 }
